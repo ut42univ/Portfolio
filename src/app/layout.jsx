@@ -12,13 +12,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const metadata = {
+  title: "Portfolio",
+};
+
 const RootLayout = ({ children }) => {
   return (
     <html lang="ja">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+      <head />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
