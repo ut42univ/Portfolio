@@ -1,0 +1,16 @@
+.header {
+  height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+}
+
+.header nav ul {
+  display: flex;
+  gap: 1rem;
+}
