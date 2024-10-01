@@ -3,13 +3,14 @@ import styles from "./Header.module.css";
 import { Button } from "@/components/ui/button";
 import { Github, Twitter } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
-
 const urlTwitter = "https://twitter.com/ut42_dev";
 const urlGithub = "https://github.com/ut42univ";
 
 export const Header = () => {
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10`}
+    >
       <Link href="/">
         <h3 className="text-2xl font-semibold">UT's Portfolio</h3>
       </Link>

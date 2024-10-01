@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata = {
   title: "Portfolio",
@@ -7,7 +7,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <head />
       <body>
         <ThemeProvider

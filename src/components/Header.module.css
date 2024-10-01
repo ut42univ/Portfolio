@@ -1,27 +1,9 @@
 .header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 1rem;
-  height: 5rem;
-  min-width: 40rem;
-  max-width: 64rem;
-  padding: 1rem 4rem;
-  margin: 2rem auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  @apply sticky top-4 h-20 min-w-[40rem] max-w-[64rem] py-4 px-12 mx-auto my-8 
+         flex justify-between items-center bg-white bg-opacity-80 shadow-xl
+         backdrop-blur-xl rounded-3xl border-2 border-black border-opacity-10;
 }
 
 .header nav ul {
-  display: flex;
-  gap: 1rem;
+  @apply flex gap-4;
 }
