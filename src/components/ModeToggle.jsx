@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Moon, Sun } from "lucide-react";
-// import { useTheme } from "next-themes";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,11 +12,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export const ModeToggle = () => {
-  // モードの切り替えは未実装
-  // const { setTheme } = useTheme();
-  const setTheme = (theme) => {
-    console.log("setTheme", theme);
-  };
+  const { setTheme } = useTheme();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
