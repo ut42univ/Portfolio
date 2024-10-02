@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { Button } from "@/components/ui/button";
 import { Github, Twitter } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
+
 const urlTwitter = "https://twitter.com/ut42_dev";
 const urlGithub = "https://github.com/ut42univ";
 
@@ -16,25 +17,27 @@ export const Header = () => {
       </Link>
       <nav>
         <ul>
-          <Link href="/">
-            <Button variant="ghost">Home</Button>
-          </Link>
-          <Link href="/about">
-            <Button variant="ghost">About</Button>
-          </Link>
-          <Link href="/news">
-            <Button variant="ghost">News</Button>
-          </Link>
-          <Link href={urlTwitter} target="_blank">
-            <Button variant="ghost" size="icon">
+          <Button variant="link" asChild>
+            <Link href="/">Home</Link>
+          </Button>
+          <Button variant="link" asChild>
+            <Link href="/about">About</Link>
+          </Button>
+          <Button variant="link" asChild>
+            <Link href="/news">News</Link>
+          </Button>
+
+          <Button variant="ghost" size="icon" asChild>
+            <Link href={urlTwitter} target="_blank">
               <Twitter />
-            </Button>
-          </Link>
-          <Link href={urlGithub} target="_blank">
-            <Button variant="ghost" size="icon">
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href={urlGithub} target="_blank">
               <Github />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
+
           <ModeToggle />
         </ul>
       </nav>
