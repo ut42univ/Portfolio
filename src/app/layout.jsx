@@ -1,12 +1,8 @@
 import "./globals.css";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 

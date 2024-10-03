@@ -3,8 +3,6 @@ import styles from "./Header.module.css";
 import { Button } from "@/components/ui/button";
 import { Github, Twitter, UserRound } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
-// import Image from "next/image";
-// import profileImg from "@/public/images/profile.jpg";
 
 const urlTwitter = "https://twitter.com/ut42_dev";
 const urlGithub = "https://github.com/ut42univ";
@@ -19,13 +17,6 @@ export const Header = () => {
           size={32}
           className="rounded-full border-2 border-black dark:border-white"
         />
-        {/* <Image
-          className="rounded-full border-2 border-black dark:border-white"
-          src={profileImg}
-          width={44}
-          height={44}
-          alt="Profile"
-        /> */}
         <h3 className="text-3xl font-extrabold">
           U<span className="text-indigo-600">.</span>T
         </h3>

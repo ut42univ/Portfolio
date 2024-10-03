@@ -3,7 +3,7 @@ import { Main } from "@/components/Main";
 
 const Home = () => {
   return (
-    <div className="text-center my-8 mx-16 h-screen">
+    <div className="text-center my-8 mx-16">
       <Header />
       <Main />
     </div>
