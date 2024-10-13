@@ -5,13 +5,10 @@ import Link from "next/link";
 import { UserRound, Menu } from "lucide-react";
 import { NavMobile } from "@/components/Header/NavMobile";
 import { ModeToggle } from "@/components/ModeToggle";
+import { useToggleMenu } from "../../../hooks/useToggleMenu";
 
 export const HeaderMobile = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const { isMenuOpen, toggleMenu } = useToggleMenu();
 
   return (
     <header className="sticky top-0 h-16 w-full px-4 flex justify-between items-center bg-white bg-opacity-80 shadow-xl backdrop-blur-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
