@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { UserRound, Menu } from "lucide-react";
+import { UserRound, Menu, X } from "lucide-react";
 import { NavMobile } from "@/components/Header/NavMobile";
 import { ModeToggle } from "@/components/ModeToggle";
 import { useToggleMenu } from "../../../hooks/useToggleMenu";
+import { Button } from "@/components/ui/button";
 
 export const HeaderMobile = () => {
   const { isMenuOpen, toggleMenu } = useToggleMenu();
 
   return (
-    <header className="sticky top-0 h-16 w-full px-4 flex justify-between items-center bg-white bg-opacity-80 shadow-xl backdrop-blur-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
+    <header className="sticky top-0 h-16 w-full px-4 mb-8 flex justify-between items-center bg-white bg-opacity-80 shadow-xl backdrop-blur-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
       <Link href="/" className="flex items-center gap-2">
         <UserRound
           size={28}
@@ -23,15 +23,24 @@ export const HeaderMobile = () => {
       </Link>
       <div className="flex gap-4">
         <ModeToggle />
-        <button onClick={toggleMenu} className="text-black dark:text-white">
-          <Menu size={28} />
-        </button>
+        <Button
+          onClick={toggleMenu}
+          variant="ghost"
+          size="icon"
+          className={`rounded-full transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "-rotate-90" : "rotate-0"
+          }`}
+        >
+          {isMenuOpen ? <X /> : <Menu />}
+        </Button>
       </div>
-      {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white bg-opacity-80 shadow-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
-          <NavMobile onClose={toggleMenu} />
-        </div>
-      )}
+      <div
+        className={`absolute top-16 left-0 w-full rounded-b-2xl bg-white bg-opacity-90 shadow-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {isMenuOpen && <NavMobile onClose={toggleMenu} />}
+      </div>
     </header>
   );
 };

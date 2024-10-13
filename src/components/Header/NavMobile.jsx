@@ -5,35 +5,50 @@ import { Github, Twitter } from "lucide-react";
 const urlTwitter = "https://twitter.com/ut42_dev";
 const urlGithub = "https://github.com/ut42univ";
 
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+];
+
+const socialLinks = [
+  { href: urlTwitter, icon: <Twitter />, label: "Twitter" },
+  { href: urlGithub, icon: <Github />, label: "Github" },
+];
+
+const NavLink = ({ href, label, onClose }) => (
+  <Button variant="link" asChild>
+    <Link href={href} onClick={onClose}>
+      {label}
+    </Link>
+  </Button>
+);
+
+const SocialLink = ({ href, icon, onClose }) => (
+  <Button variant="ghost" size="icon" asChild>
+    <Link href={href} target="_blank" onClick={onClose}>
+      {icon}
+    </Link>
+  </Button>
+);
+
 export const NavMobile = ({ onClose }) => {
   return (
     <nav>
-      <ul className="flex flex-col gap-4 p-4">
-        <li>
-          <Button variant="link" asChild>
-            <Link href="/" onClick={onClose}>
-              Home
-            </Link>
-          </Button>
-        </li>
-        <li>
-          <Button variant="link" asChild>
-            <Link href="/about" onClick={onClose}>
-              About
-            </Link>
-          </Button>
-        </li>
-        <li className="flex gap-2 justify-start">
-          <Button variant="ghost" size="icon" asChild>
-            <Link href={urlTwitter} target="_blank" onClick={onClose}>
-              <Twitter />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href={urlGithub} target="_blank" onClick={onClose}>
-              <Github />
-            </Link>
-          </Button>
+      <ul className="gap-4 p-4 items-center flex flex-col">
+        {links.map((link) => (
+          <li key={link.href}>
+            <NavLink href={link.href} label={link.label} onClose={onClose} />
+          </li>
+        ))}
+        <li className="flex gap-4">
+          {socialLinks.map((social) => (
+            <SocialLink
+              key={social.href}
+              href={social.href}
+              icon={social.icon}
+              onClose={onClose}
+            />
+          ))}
         </li>
       </ul>
     </nav>
