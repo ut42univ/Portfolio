@@ -4,7 +4,7 @@ import Link from "next/link";
 import { UserRound, Menu, X } from "lucide-react";
 import { NavMobile } from "@/components/Header/NavMobile";
 import { ModeToggle } from "@/components/ModeToggle";
-import { useToggleMenu } from "../../../hooks/useToggleMenu";
+import { useToggleMenu } from "@/hooks/useToggleMenu";
 import { Button } from "@/components/ui/button";
 
 export const HeaderMobile = () => {
