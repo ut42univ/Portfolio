@@ -1,6 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  // 画像が読み込まれたらローディングをfalseに
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
+
   return (
     <main className="text-center mx-auto">
       <h1 className="text-4xl font-extrabold">
@@ -12,25 +23,43 @@ const Home = () => {
         design and UI/UX.
       </p>
 
-      <div className="flex-auto">
-        <Image
-          src="https://picsum.photos/800/800"
-          width={500}
-          height={500}
-          alt="Picture of the author"
-        />
-        <Image
-          src="https://picsum.photos/500/500"
-          width={500}
-          height={500}
-          alt="Picture of the author"
-        />
-        <Image
-          src="https://picsum.photos/600/600"
-          width={500}
-          height={500}
-          alt="Picture of the author"
-        />
+      <div className="flex justify-center gap-4">
+        {/* Skeletonのラッパー */}
+        <div className="relative">
+          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
+          <Image
+            src="https://picsum.photos/800/800"
+            width={200}
+            height={200}
+            alt="Picture of the author"
+            className="rounded-lg"
+            onLoadingComplete={handleLoadingComplete}
+          />
+        </div>
+
+        <div className="relative">
+          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
+          <Image
+            src="https://picsum.photos/500/500"
+            width={200}
+            height={200}
+            alt="Picture of the author"
+            className="rounded-lg"
+            onLoadingComplete={handleLoadingComplete}
+          />
+        </div>
+
+        <div className="relative">
+          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
+          <Image
+            src="https://picsum.photos/600/600"
+            width={200}
+            height={200}
+            alt="Picture of the author"
+            className="rounded-lg"
+            onLoadingComplete={handleLoadingComplete}
+          />
+        </div>
       </div>
     </main>
   );
