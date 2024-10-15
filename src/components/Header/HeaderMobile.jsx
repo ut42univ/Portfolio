@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { UserRound, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NavMobile } from "@/components/Header/NavMobile";
 import { ModeToggle } from "@/components/ModeToggle";
 import { useToggleMenu } from "@/hooks/useToggleMenu";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const HeaderMobile = () => {
   const { isMenuOpen, toggleMenu } = useToggleMenu();
@@ -13,10 +14,10 @@ export const HeaderMobile = () => {
   return (
     <header className="sticky top-0 h-16 w-full px-4 mb-8 flex justify-between items-center bg-white bg-opacity-80 shadow-xl backdrop-blur-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
       <Link href="/" className="flex items-center gap-2">
-        <UserRound
-          size={28}
-          className="rounded-full border-2 border-black dark:border-white"
-        />
+        <Avatar className="border-2 h-8 w-8">
+          <AvatarImage src="https://pbs.twimg.com/profile_images/1835729229599932416/ZBg36eLt_400x400.jpg" />
+          <AvatarFallback>UT</AvatarFallback>
+        </Avatar>
         <h3 className="text-xl font-bold">
           U<span className="text-gray-500">.</span>T
         </h3>
