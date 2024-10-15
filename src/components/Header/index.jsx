@@ -1,23 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { HeaderPC } from "@/components/Header/HeaderPC";
 import { HeaderMobile } from "@/components/Header/HeaderMobile";
+import { useHandleResize } from "@/hooks/useHandleResize";
+import { useEffect } from "react";
 
 export const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile, handleResize } = useHandleResize();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
     handleResize();
-
-    window.addEventListener("resize", handleResize);
+    addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      removeEventListener("resize", handleResize);
     };
   }, []);
 
