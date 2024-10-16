@@ -15,7 +15,7 @@ export const Header = () => {
     return () => {
       removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
