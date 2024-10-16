@@ -1,16 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useHandleLoading } from "@/hooks/useHandleLoading";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
-
-  // 画像が読み込まれたらローディングをfalseに
-  const handleLoadingComplete = () => {
-    setLoading(false);
-  };
+  const { loading, handleLoadingComplete } = useHandleLoading();
 
   return (
     <main className="mx-auto">
