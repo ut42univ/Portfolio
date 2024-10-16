@@ -13,15 +13,22 @@ const Home = () => {
   };
 
   return (
-    <main className="text-center mx-auto">
-      <h1 className="text-4xl font-extrabold">
-        Hi, I'm <span>Takuya</span>. CS Student in Japan.
-      </h1>
-      <p className="text-lg font-semibold">
-        I'm a CS student at a university in Japan. I'm interested in
-        programming, especially in web development. I'm also interested in
-        design and UI/UX.
-      </p>
+    <main className="mx-auto">
+      {/* Hero Section */}
+      <div className="h-screen bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient bg-[length:200%_200%]">
+        <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
+          <div className="flex flex-col gap-8">
+            <h1 className="text-6xl font-extrabold leading-relaxed">
+              Hi, I'm <span>Takuya</span>. <br /> CS Student in Japan.
+            </h1>
+            <p className="text-lg font-mono font-semibold leading-relaxed">
+              I'm a CS student at a university in Nagsaki, Japan. I'm interested
+              in programming, especially in Web and iOS development. I'm also
+              interested in design and UI/UX.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="flex justify-center gap-4">
         {/* Skeletonのラッパー */}
