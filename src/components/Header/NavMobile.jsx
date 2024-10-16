@@ -16,7 +16,7 @@ const socialLinks = [
 ];
 
 const NavLink = ({ href, label, onClose }) => (
-  <Button variant="link" asChild>
+  <Button variant="link" className="text-base" asChild>
     <Link href={href} onClick={onClose}>
       {label}
     </Link>
