@@ -13,10 +13,10 @@ const Home = () => {
       <div className="h-screen bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient bg-[length:200%_200%]">
         <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
           <div className="flex flex-col gap-8">
-            <h1 className="text-6xl font-extrabold leading-relaxed">
+            <h1 className="text-3xl md:text-6xl font-extrabold md:leading-relaxed">
               Hi, I'm <span>Takuya</span>. <br /> CS Student in Japan.
             </h1>
-            <p className="text-lg font-mono font-semibold leading-relaxed">
+            <p className="text-lg font-mono font-semibold md:leading-relaxed ">
               I'm a CS student at a university in Nagsaki, Japan. I'm interested
               in programming, especially in Web and iOS development. I'm also
               interested in design and UI/UX.
