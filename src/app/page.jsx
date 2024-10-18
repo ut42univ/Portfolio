@@ -1,12 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ImageWithSkeleton";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useHandleLoading } from "@/hooks/useHandleLoading";
 
 const Home = () => {
-  const { loading, handleLoadingComplete } = useHandleLoading();
-
   return (
     <main className="mx-auto">
       {/* Hero Section */}
@@ -38,48 +35,41 @@ const Home = () => {
               リリースまでしばらくお待ちください。
             </p>
             <div className="flex justify-around gap-4">
-              {/* Skeletonのラッパー */}
-              <div className="relative">
-                {loading && (
-                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
-                )}
-                <Image
-                  src="https://picsum.photos/800/800"
-                  width={200}
-                  height={200}
-                  alt="Picture of the author"
-                  className="rounded-lg"
-                  onLoadingComplete={handleLoadingComplete}
-                />
-              </div>
+              <ImageWithSkeleton
+                width={200}
+                height={200}
+                src="https://picsum.photos/200/200"
+              />
+              <ImageWithSkeleton
+                width={200}
+                height={200}
+                src="https://picsum.photos/500/500"
+              />
+              <ImageWithSkeleton
+                width={200}
+                height={200}
+                src="https://picsum.photos/600/600"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <div className="relative">
-                {loading && (
-                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
-                )}
-                <Image
-                  src="https://picsum.photos/500/500"
-                  width={200}
-                  height={200}
-                  alt="Picture of the author"
-                  className="rounded-lg"
-                  onLoadingComplete={handleLoadingComplete}
-                />
-              </div>
-
-              <div className="relative">
-                {loading && (
-                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
-                )}
-                <Image
-                  src="https://picsum.photos/600/600"
-                  width={200}
-                  height={200}
-                  alt="Picture of the author"
-                  className="rounded-lg"
-                  onLoadingComplete={handleLoadingComplete}
-                />
-              </div>
+      {/* Contact Section */}
+      <div className="h-screen">
+        <div className="grid place-items-center h-screen">
+          <div className="flex justify-center gap-8">
+            <Skeleton className="w-24 h-24 rounded-full" />
+            <div className="flex flex-col gap-4">
+              <h1 className="font-mono">
+                this page is under construction. <br />
+                please wait for a while.
+              </h1>
+              <Skeleton className="w-96 h-4 rounded-sm" />
+              <Skeleton className="w-96 h-4 rounded-sm" />
+              <Skeleton className="w-96 h-4 rounded-sm" />
+              <Skeleton className="w-96 h-4 rounded-sm" />
+              <Skeleton className="w-96 h-4 rounded-sm" />
             </div>
           </div>
         </div>
