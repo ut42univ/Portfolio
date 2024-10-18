@@ -25,42 +25,63 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex justify-center gap-4">
-        {/* Skeletonのラッパー */}
-        <div className="relative">
-          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
-          <Image
-            src="https://picsum.photos/800/800"
-            width={200}
-            height={200}
-            alt="Picture of the author"
-            className="rounded-lg"
-            onLoadingComplete={handleLoadingComplete}
-          />
-        </div>
+      {/* About Section */}
+      <div className="h-screen bg-stone-900">
+        <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
+          <div className="flex flex-col gap-8">
+            <h1 className="text-3xl text-center md:text-6xl font-extrabold md:leading-relaxed">
+              工事中🚧
+            </h1>
+            <p className="text-lg font-mono font-semibold md:leading-relaxed ">
+              このセクション以降は工事中です。
+              <br />
+              リリースまでしばらくお待ちください。
+            </p>
+            <div className="flex justify-around gap-4">
+              {/* Skeletonのラッパー */}
+              <div className="relative">
+                {loading && (
+                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
+                )}
+                <Image
+                  src="https://picsum.photos/800/800"
+                  width={200}
+                  height={200}
+                  alt="Picture of the author"
+                  className="rounded-lg"
+                  onLoadingComplete={handleLoadingComplete}
+                />
+              </div>
 
-        <div className="relative">
-          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
-          <Image
-            src="https://picsum.photos/500/500"
-            width={200}
-            height={200}
-            alt="Picture of the author"
-            className="rounded-lg"
-            onLoadingComplete={handleLoadingComplete}
-          />
-        </div>
+              <div className="relative">
+                {loading && (
+                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
+                )}
+                <Image
+                  src="https://picsum.photos/500/500"
+                  width={200}
+                  height={200}
+                  alt="Picture of the author"
+                  className="rounded-lg"
+                  onLoadingComplete={handleLoadingComplete}
+                />
+              </div>
 
-        <div className="relative">
-          {loading && <Skeleton className="w-[200px] h-[200px] rounded-lg" />}
-          <Image
-            src="https://picsum.photos/600/600"
-            width={200}
-            height={200}
-            alt="Picture of the author"
-            className="rounded-lg"
-            onLoadingComplete={handleLoadingComplete}
-          />
+              <div className="relative">
+                {loading && (
+                  <Skeleton className="w-[200px] h-[200px] rounded-lg" />
+                )}
+                <Image
+                  src="https://picsum.photos/600/600"
+                  width={200}
+                  height={200}
+                  alt="Picture of the author"
+                  className="rounded-lg"
+                  onLoadingComplete={handleLoadingComplete}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
