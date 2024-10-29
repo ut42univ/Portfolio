@@ -9,13 +9,14 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const HeaderMobile = () => {
+  const avatarSrc = "https://avatars.githubusercontent.com/u/119403405";
   const { isMenuOpen, toggleMenu } = useToggleMenu();
 
   return (
     <header className="fixed top-0 z-50 h-16 w-full px-4 mb-8 flex justify-between items-center bg-white bg-opacity-80 shadow-xl backdrop-blur-xl border-b-1 border-black border-opacity-10 dark:bg-black dark:bg-opacity-80 dark:border-white dark:border-opacity-10">
       <Link href="/" className="flex items-center gap-2">
         <Avatar className="border-2 h-8 w-8">
-          <AvatarImage src="https://pbs.twimg.com/profile_images/1835729229599932416/ZBg36eLt_400x400.jpg" />
+          <AvatarImage src={avatarSrc} />
           <AvatarFallback>UT</AvatarFallback>
         </Avatar>
         <h3 className="text-xl font-bold">
