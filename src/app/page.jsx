@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main className="mx-auto">
       {/* Hero Section */}
-      <div className="h-screen bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient bg-[length:200%_200%]">
+      <div className="h-screen bg-gradient-to-br from-indigo-400 via-emerald-400 to-yellow-400 animate-gradient bg-[length:150%_150%]">
         <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
           <div className="flex flex-col gap-8">
             <h1 className="text-3xl md:text-6xl font-extrabold md:leading-relaxed">
