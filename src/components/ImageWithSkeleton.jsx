@@ -7,18 +7,14 @@ export const ImageWithSkeleton = (props) => {
 
   return (
     <div>
-      {loading && (
-        <Skeleton
-          className={`w-[${props.width}px] h-[${props.height}px] rounded-lg`}
-        />
-      )}
+      {loading && <Skeleton className="w-48 h-48 rounded-lg" />}
       <Image
         src={props.src}
         width={props.width}
         height={props.height}
         alt="picture"
         className="rounded-lg"
-        onLoadingComplete={handleLoadingComplete}
+        onLoad={handleLoadingComplete}
       />
     </div>
   );
