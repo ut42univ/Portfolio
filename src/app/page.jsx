@@ -8,15 +8,17 @@ const Home = () => {
     <main className="mx-auto">
       {/* Hero Section */}
       <div className="h-screen bg-gradient-to-br from-indigo-400 via-emerald-400 to-yellow-400 animate-gradient bg-[length:150%_150%]">
-        <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
+        <div className="grid place-items-center h-screen text-white mx-auto max-w-5xl p-8">
           <div className="flex flex-col gap-8">
-            <h1 className="text-3xl md:text-6xl font-extrabold md:leading-relaxed">
-              Hi, I'm <span>Takuya</span>. <br /> CS Student in Japan.
+            <h1 className="text-4xl md:text-6xl font-extrabold md:leading-relaxed">
+              Hello, I'm <span>Takuya</span>👋
+              <br />
+              Thank you for your visit!
             </h1>
-            <p className="text-lg font-mono font-semibold md:leading-relaxed ">
-              I'm a CS student at a university in Nagsaki, Japan. I'm interested
-              in programming, especially in Web and iOS development. I'm also
-              interested in design and UI/UX.
+            <p className="text-xl font-mono font-semibold md:leading-relaxed ">
+              I'm a CS student in Japan. I love coding and design.
+              <br />
+              個人開発とデザインが大好きな大学生です。
             </p>
           </div>
         </div>
@@ -26,8 +28,8 @@ const Home = () => {
       <div className="h-screen bg-stone-900">
         <div className="grid place-items-center h-screen text-white mx-auto max-w-4xl p-8">
           <div className="flex flex-col gap-8">
-            <h1 className="text-3xl text-center md:text-6xl font-extrabold md:leading-relaxed">
-              工事中🚧
+            <h1 className="text-3xl text-center md:text-5xl font-extrabold md:leading-relaxed">
+              私について
             </h1>
             <p className="text-lg font-mono font-semibold md:leading-relaxed ">
               このセクション以降は工事中です。
